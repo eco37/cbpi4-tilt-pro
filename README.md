@@ -1,1 +1,1 @@
-# cbpi4-tilt-pro
+# craftbeerpi4-plugin-template
