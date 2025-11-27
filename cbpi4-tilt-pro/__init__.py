@@ -151,7 +151,7 @@ class BLESensor(CBPiSensor):
                         reading = round(reading, 3)
                         self.time_old = current_time
                         self.value = reading
-                        self.log_data(self.value)
+                        self.log_data(self.value*1000)
                 elif self.sensorType == "Temperature":
                     self.TEMP_UNIT=self.get_config_value("TEMP_UNIT", "C")
                     if current_time > self.time_old:
