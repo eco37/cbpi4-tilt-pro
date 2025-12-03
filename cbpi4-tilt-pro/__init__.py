@@ -80,12 +80,15 @@ def readTilt(cache):
         try:
             logging.info("Starting Bluetooth connection")
             sock = bluez.hci_open_dev(dev_id)
+            print("sock")
             blescan.hci_le_set_scan_parameters(sock)
+            print("hci")
             blescan.hci_enable_le_scan(sock)
+            print("done")
 
             while True:
                 beacons = distinct(blescan.parse_events(sock, 10))
-  
+                print("beacon")
                 for beacon in beacons:
                     if beacon['uuid'] in TILTS.keys():
                         cache[TILTS[beacon['uuid']]] = {'Temp': beacon['major'], 'Gravity': beacon['minor'], 'Time': time.time(),'RSSI': beacon['rssi']}
