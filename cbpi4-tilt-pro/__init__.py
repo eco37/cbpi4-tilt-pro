@@ -66,12 +66,14 @@ def calibrate(tilt, equation):
     return eval(equation)
   
 def distinct(objects):
+    print("Start di")
     seen = set()
     unique = []
     for obj in objects:
         if obj['uuid'] not in seen:
             unique.append(obj)
             seen.add(obj['uuid'])
+    print("Distinct")
     return unique
 
 def readTilt(cache):
