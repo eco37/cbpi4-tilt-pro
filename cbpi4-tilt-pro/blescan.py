@@ -3,7 +3,7 @@ from __future__ import print_function
 # SwitchDoc Lab December 2020
 
 from builtins import range
-DEBUG = False 
+DEBUG = True 
 # BLE scanner based on https://github.com/adamf/BLE/blob/master/ble-scanner.py
 # BLE scanner, based on https://code.google.com/p/pybluez/source/browse/trunk/examples/advanced/inquiry-with-rssi.py
 
