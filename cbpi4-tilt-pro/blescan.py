@@ -117,7 +117,7 @@ def hci_le_set_scan_parameters(sock):
 
     
 def parse_events(sock, loop_count=100):
-    old_filter = sock.getsockopt( bluez.SOL_HCI, bluez.HCI_FILTER, 14)
+    old_filter = sock.getsockopt( bluez.SOL_HCI, bluez.HCI_FILTER)
     print(old_filter)
 
     # perform a device inquiry on bluetooth device #0
@@ -192,7 +192,7 @@ def parse_events(sock, loop_count=100):
                     })
                 done = True
                 print(beacons)
-                sock.setsockopt( bluez.SOL_HCI, bluez.HCI_FILTER, old_filter, 14 )
+                sock.setsockopt( bluez.SOL_HCI, bluez.HCI_FILTER, old_filter )
                 print("Return")
                 return beacons
 
