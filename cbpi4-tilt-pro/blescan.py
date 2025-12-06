@@ -194,7 +194,7 @@ def parse_events(sock, loop_count=100):
 
     print(beacons)
 
-    sock.setsockopt( bluez.SOL_HCI, bluez.HCI_FILTER, old_filter )
+    #sock.setsockopt( bluez.SOL_HCI, bluez.HCI_FILTER, old_filter )
     print("Return")
     return beacons
 
