@@ -73,7 +73,7 @@ def distinct(objects):
         if obj['uuid'] not in seen:
             unique.append(obj)
             seen.add(obj['uuid'])
-    print("Distinct")
+    #print("Distinct")
     return unique
 
 def readTilt(cache):
