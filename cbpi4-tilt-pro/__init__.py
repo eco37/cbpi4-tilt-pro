@@ -66,7 +66,7 @@ def calibrate(tilt, equation):
     return eval(equation)
   
 def distinct(objects):
-    print("Start di")
+    #print("Start di")
     seen = set()
     unique = []
     for obj in objects:
@@ -82,15 +82,15 @@ def readTilt(cache):
         try:
             logging.info("Starting Bluetooth connection")
             sock = bluez.hci_open_dev(dev_id)
-            print("sock")
+            #print("sock")
             blescan.hci_le_set_scan_parameters(sock)
-            print("hci")
+            #print("hci")
             blescan.hci_enable_le_scan(sock)
-            print("done")
+            #print("done")
 
             while True:
                 beacons = distinct(blescan.parse_events(sock, 10))
-                print("beacon")
+                #print("beacon")
                 for beacon in beacons:
                     if beacon['uuid'] in TILTS.keys():
                         cache[TILTS[beacon['uuid']]] = {'Temp': beacon['major'], 'Gravity': beacon['minor'], 'Time': time.time(),'RSSI': beacon['rssi']}
