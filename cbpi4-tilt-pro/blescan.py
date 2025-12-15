@@ -3,7 +3,7 @@ from __future__ import print_function
 # SwitchDoc Lab December 2020
 
 from builtins import range
-DEBUG = True 
+DEBUG = False
 # BLE scanner based on https://github.com/adamf/BLE/blob/master/ble-scanner.py
 # BLE scanner, based on https://code.google.com/p/pybluez/source/browse/trunk/examples/advanced/inquiry-with-rssi.py
 
@@ -181,9 +181,9 @@ def parse_events(sock, loop_count=100):
                     Adstring += ","
                     Adstring += "%i" % struct.unpack("b", pkt[report_pkt_offset -1].to_bytes(1,'little'))
 
-                    print ("\tAdstring={}".format(Adstring))
+                    #print ("\tAdstring={}".format(Adstring))
                     myFullList.append(Adstring)
-                    print(myFullList)
+                    #print(myFullList)
                     beacons.append({
                         'uuid': returnstringpacket(pkt[report_pkt_offset - 22: report_pkt_offset - 6]),
                         'minor': returnnumberpacket(pkt[report_pkt_offset - 4: report_pkt_offset - 2]),
@@ -192,10 +192,10 @@ def parse_events(sock, loop_count=100):
                     })
                 done = True
 
-    print(beacons)
+    #print(beacons)
 
     #sock.setsockopt( bluez.SOL_HCI, bluez.HCI_FILTER, old_filter )
-    print("Return")
+    #print("Return")
     return beacons
 
 
