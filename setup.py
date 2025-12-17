@@ -11,7 +11,7 @@ class PreInstallCommand(install):
 
 
 setup(name='cbpi4-tilt-pro',
-      version='0.0.1',
+      version='0.1.0',
       description='CraftBeerPi4 Plugin for Tilt Pro',
       author='Max Sidenstjärna',
       author_email='',
