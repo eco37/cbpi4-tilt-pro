@@ -14,6 +14,12 @@ Tested on Raspberry Pi OS Trixie
 
 CBPi version 4.7.0
 
+Before you can install this plugin, you will need to install a couple of additional packages manually.
+
+`sudo apt-get install pkg-config libboost-python-dev libboost-thread-dev libbluetooth-dev libglib2.0-dev python3-dev`
+
+Once these packages have been installed, you need to install the plugin on your system.
+
 Please follow th instructions from the [documentation](https://openbrewing.gitbook.io/craftbeerpi4_support/readme/plugin-installation).
 
 - Package name:  cbpi4-tilt-pro
